@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as ImagePicker from 'expo-image-picker';
-
+import { API } from '../../utils/Elements';
 export default function EditProfile({ route, navigation }) {
 
     const [user, setUser] = useState({
@@ -35,7 +35,7 @@ export default function EditProfile({ route, navigation }) {
     useEffect(() => {
         setplaceholder(route.params.user)
         setUser(route.params.user)
-        setImage('http://ruppinmobile.tempdomain.co.il/site26/' + route.params.user.User_Image)
+        setImage(API+'' + route.params.user.User_Image)
     }, []);
 
     useEffect(() => {
@@ -127,7 +127,7 @@ export default function EditProfile({ route, navigation }) {
     }
 
     const SaveUpdate = async (type) => {
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Users/Edit', {
+        await fetch(API+''+'Api/Users/Edit', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',
@@ -151,7 +151,7 @@ export default function EditProfile({ route, navigation }) {
     }
 
     const UploadImage = async () => {
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Image', {
+        await fetch(API+''+'Api/Image', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',

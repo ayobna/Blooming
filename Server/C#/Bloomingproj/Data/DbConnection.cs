@@ -11,7 +11,7 @@ namespace Bloomingproj.Data
 {
     public class DbConnection
     {
-        private string connectionString =ConfigurationManager.ConnectionStrings["LIVEDNSfromLocal"].ConnectionString;
+        private string connectionString = ConfigurationManager.ConnectionStrings["Production"].ConnectionString;
         //ctor --> only create the connection
         public DbConnection() { }
 

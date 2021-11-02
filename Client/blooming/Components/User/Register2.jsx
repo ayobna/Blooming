@@ -4,7 +4,7 @@ import Constants from 'expo-constants';
 import * as Notifications from 'expo-notifications';
 import { Picker } from '@react-native-picker/picker';
 
-
+import { API } from '../../utils/Elements';
 
 
 export default function Register2({ route, navigation }) {
@@ -116,7 +116,7 @@ export default function Register2({ route, navigation }) {
             if (passwordConfirm === User.User_Password) {
 
 
-                await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/Users/Insert', {
+                await fetch(API+''+'api/Users/Insert', {
                     method: 'Post',
                     headers: {
                         Accept: 'application/json', 'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ export default function Register2({ route, navigation }) {
     }
 
     const UploadImage = async () => {
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Image', {
+        await fetch(API+''+'Api/Image', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',
@@ -214,7 +214,7 @@ export default function Register2({ route, navigation }) {
 
     return (
         <View style={styles.container}>
-      <Image style={styles.bgImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26//images/home_page/Home05.jpeg' }} />
+      <Image style={styles.bgImage} source={{ uri:API+''+'images/home_page/Home05.jpeg' }} />
 
             <View style={styles.containe}>
                 <TouchableHighlight

@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { color } from 'react-native-reanimated';
-
+import { API } from '../../utils/Elements';
 const windowheight = Dimensions.get('window').height;
 
 export default function QuestionOwner({ navigation, route }) {
@@ -54,7 +54,7 @@ export default function QuestionOwner({ navigation, route }) {
 
 
     const GetQuestions = () => {
-        fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Question/AdminQuestion/' + user.Id_User, {
+        fetch(API+''+'Api/Question/AdminQuestion/' + user.Id_User, {
             method: 'Get',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ export default function QuestionOwner({ navigation, route }) {
 
     const AskAdmin = async () => {
 
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Question/insert/AskAdmin', {
+        await fetch(API+''+'Api/Question/insert/AskAdmin', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ export default function QuestionOwner({ navigation, route }) {
 
     return (
         <View style={styles.container}>
-                  <Image style={styles.bgImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26//images/home_page/Home06.jpeg' }} />
+                  <Image style={styles.bgImage} source={{ uri: API+''+'images/home_page/Home06.jpeg' }} />
 
             <View style={styles.Usercontainer}>
                 <View>

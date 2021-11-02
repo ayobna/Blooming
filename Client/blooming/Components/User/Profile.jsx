@@ -7,7 +7,7 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { color } from 'react-native-reanimated';
 
-
+import { API } from '../../utils/Elements';
 export default function Profile({ navigation, route }) {
 
   const [modalVisible, setModalVisible] = useState(false);
@@ -89,7 +89,7 @@ export default function Profile({ navigation, route }) {
 
   const AskAdmin = async () => {
 
-    await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Question/insert/AskAdmin', {
+    await fetch(API+''+'Api/Question/insert/AskAdmin', {
       method: 'Post',
       headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ export default function Profile({ navigation, route }) {
         <View>
           <Text style={[{fontSize: 35,color:'#000000',marginBottom:10}]} >Your Profile</Text>
         </View>
-        < Image source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26/' + user.User_Image }} style={styles.imge} />
+        < Image source={{ uri: API+'' + user.User_Image }} style={styles.imge} />
         <View style={styles.User}>
           <Text style={styles.text}>Name:{user.First_Name} {user.Last_Name}</Text>
           <Text style={styles.text}>Email:{user.Email}</Text>

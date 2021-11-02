@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import { StyleSheet, Text, TouchableOpacity, BackHandler,View, Dimensions ,Image} from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { API } from "../../utils/Elements";
 export default function AdminHome({ navigation }) {
 
 
@@ -31,7 +31,7 @@ export default function AdminHome({ navigation }) {
   return (
 
     <View style={styles.container}>
-      <Image style={styles.bgImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26//images/home_page/Home07.jpeg' }} />
+      <Image style={styles.bgImage} source={{ uri:API+''+'images/home_page/Home07.jpeg' }} />
 
       <View style={styles.countContainer}>
         <Text style={styles.text}>Hello Admin</Text>

@@ -13,10 +13,12 @@ import {
     TouchableHighlight,
     Pressable
 } from 'react-native';
+import { API } from '../../utils/Elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Stars from 'react-native-stars';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import NumericInput from 'react-native-numeric-input'
+
 
 function Orders({ route, navigation }) {
 
@@ -35,7 +37,7 @@ function Orders({ route, navigation }) {
         console.log("########## " + route.params.id)
         //    console.log("################    " + user)
 
-        fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Orders/UserOrders/' + route.params.id, {
+        fetch(API+''+'Api/Orders/UserOrders/' + route.params.id, {
             method: 'Get',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',
@@ -72,7 +74,7 @@ function Orders({ route, navigation }) {
 
     const AddFeedback = async () => {
 
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Feedback/insert', {
+        await fetch(API+''+'Api/Feedback/insert', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',

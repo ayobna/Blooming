@@ -62,7 +62,7 @@ export default function HomeScreen({ route, navigation }) {
     return (
       <View style={styles.item}>
         <ParallaxImage
-          source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26/images/home_page/' + item.illustration }}
+          source={{ uri: API+''+'images/home_page/' + item.illustration }}
           containerStyle={styles.imageContainer}
           style={styles.image}
           parallaxFactor={0.4}
@@ -76,7 +76,7 @@ export default function HomeScreen({ route, navigation }) {
 
   const GetProdct = async (Code_Type) => {
 
-    await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/Products', {
+    await fetch(API+''+'api/Products', {
       method: 'Post',
       headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',

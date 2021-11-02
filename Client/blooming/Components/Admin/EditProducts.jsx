@@ -11,7 +11,7 @@ import {
   FlatList,
   Dimensions
 } from 'react-native';
-
+import { API } from '../../utils/Elements';
 export default function EditProducts({ route, navigation }) {
 
   const [Data, setData] = useState(route.params.data)
@@ -35,7 +35,7 @@ export default function EditProducts({ route, navigation }) {
   }
   async function removeProductFromDB(item){
   
-     await  fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Products/Delete', {
+     await  fetch(API+''+'Api/Products/Delete', {
           method: 'Post',
           headers: {
               Accept: 'application/json', 'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export default function EditProducts({ route, navigation }) {
   
  async function EditItemFromDB(item){
 
-  await  fetch('http://ruppinmobile.tempdomain.co.il/site26/api/Products/Edit', {
+  await  fetch(API+''+'/api/Products/Edit', {
     method: 'Post',
     headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ export default function EditProducts({ route, navigation }) {
 
   const handlerClick =     async () => {
 
-    await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/ShowProductDetails', {
+    await fetch(API+''+'api/ShowProductDetails', {
         method: 'Post',
         headers: {
             Accept: 'application/json', 'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ export default function EditProducts({ route, navigation }) {
 }
 
 const handlerClick1 =async(type)=>{
-  await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/ShowProductDetails', {
+  await fetch(API+''+'api/ShowProductDetails', {
     method: 'Post',
     headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
@@ -148,7 +148,7 @@ const handlerClick1 =async(type)=>{
 }
 
 const handlerClick2=async(tybe,names)=>{
-  await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/ShowProductDetails', {
+  await fetch(API+''+'api/ShowProductDetails', {
     method: 'Post',
     headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
@@ -186,7 +186,7 @@ const handlerClick2=async(tybe,names)=>{
               </View>
             </View>
 
-            <Image style={styles.cardImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26/' + item.Product_Image }} />
+            <Image style={styles.cardImage} source={{ uri: API+''+ + item.Product_Image }} />
 
             <View style={styles.cardFooter}>
               <View style={styles.socialBarContainer}>

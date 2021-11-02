@@ -12,7 +12,7 @@ import {
     TextInput,
     FlatList
 } from 'react-native';
-
+import { API } from '../../utils/Elements';
 export default function Questions({ route, navigation }) {
 
 
@@ -36,7 +36,7 @@ export default function Questions({ route, navigation }) {
 
 
     const GetQuestions = () => {
-        fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Question/QuestionByIdProduct/' + route.params.id_Product, {
+        fetch(API+''+'Api/Question/QuestionByIdProduct/' + route.params.id_Product, {
             method: 'Get',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export default function Questions({ route, navigation }) {
 
     const Addanswer = async () => {
 
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Question/insert/answer', {
+        await fetch(API+''+'Api/Question/insert/answer', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ export default function Questions({ route, navigation }) {
 
     return (
         <View style={styles.container}>
-            <Image style={styles.bgImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26//images/home_page/Home06.jpeg' }} />
+            <Image style={styles.bgImage} source={{ uri:API+''+'images/home_page/Home06.jpeg' }} />
                 <Text   style={styles.titleText}>Product Questions </Text>
             <FlatList
                 horizontal={false}

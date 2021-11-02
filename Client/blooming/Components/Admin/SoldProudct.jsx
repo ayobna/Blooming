@@ -14,7 +14,7 @@ import {
   TouchableHighlight,
   Pressable
 } from 'react-native';
-
+import { API } from '../../utils/Elements';
 
 function SoldProudct({ route, navigation }) {
 
@@ -34,7 +34,7 @@ function SoldProudct({ route, navigation }) {
 
     let list = Data
     for (let index = 0; index < DataId.length; index++) {
-      await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Products/' + DataId[index].Id_Product, {
+      await fetch(API+''+'Api/Products/' + DataId[index].Id_Product, {
         method: 'Get',
         headers: {
           Accept: 'application/json', 'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ function SoldProudct({ route, navigation }) {
 
   const getProductDataID = async()=> {
 
-    await   fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Products/SoldProduct', {
+    await   fetch(API+''+'Api/Products/SoldProduct', {
       method: 'Get',
       headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ function SoldProudct({ route, navigation }) {
           <View>
 
             <View style={styles.card}>
-              <Image style={styles.cardImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26/' + item.Product_Image }} />
+              <Image style={styles.cardImage} source={{ uri: API+''+ item.Product_Image }} />
 
 
               <View style={styles.cardHeader}>

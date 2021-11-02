@@ -11,7 +11,7 @@ import {
     FlatList,
     Dimensions
 } from 'react-native';
-
+import { API } from '../../utils/Elements';
 export default function ProductsNotInStock({ route, navigation }) {
 
     const [Data, setData] = useState()
@@ -27,7 +27,7 @@ export default function ProductsNotInStock({ route, navigation }) {
 
 
    const  GetProductsNotInStock =async()=>{
-    await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Products/ProductsNotInStock', {
+    await fetch(API+''+'Api/Products/ProductsNotInStock', {
         method: 'Get',
         headers: {
             Accept: 'application/json', 'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export default function ProductsNotInStock({ route, navigation }) {
     }
     async function removeProductFromDB(item) {
 
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Products/GetBackProduct', {
+        await fetch(API+''+'/Api/Products/GetBackProduct', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',
@@ -80,14 +80,6 @@ export default function ProductsNotInStock({ route, navigation }) {
             .catch((error) => console.log(error))
             .finally(() => console.log('finished everything'))
     }
-
-
-//http://ruppinmobile.tempdomain.co.il/site26/Api/Products/ProductsNotInStock
-
-
-  
-  
-
 
 
     
@@ -116,7 +108,7 @@ export default function ProductsNotInStock({ route, navigation }) {
                             </View>
                         </View>
 
-                        <Image style={styles.cardImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26/' + item.Product_Image}} />
+                        <Image style={styles.cardImage} source={{ uri:API+'' + item.Product_Image}} />
 
                         <View style={styles.cardFooter}>
                             <View style={styles.socialBarContainer}>

@@ -5,7 +5,7 @@ import {
     TouchableOpacity, TextInput
 } from 'react-native';
 
-
+import { API } from '../../utils/Elements';
 import { Picker } from '@react-native-picker/picker';
 import * as ImagePicker from 'expo-image-picker';
 export default function Register({ route, navigation }) {
@@ -104,7 +104,7 @@ export default function Register({ route, navigation }) {
     }
     return (
         <View style={styles.container}>
-                  <Image style={styles.bgImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26//images/home_page/Home05.jpeg' }} />
+                  <Image style={styles.bgImage} source={{ uri: API+''+'images/home_page/Home05.jpeg' }} />
 
             <View style={styles.containe}>
                 <TouchableHighlight

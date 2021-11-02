@@ -36,7 +36,7 @@ function AboutProduct({ route, navigation }) {
     }
     getData()
 
-    fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Feddback/' + route.params.data.Id_Product, {
+    fetch(API+''+'Api/Feddback/' + route.params.data.Id_Product, {
       method: 'Get',
       headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ function AboutProduct({ route, navigation }) {
     }
   }
   const askForProduct = async () => {
-    await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Question/insert/ask', {
+    await fetch(API+''+'Api/Question/insert/ask', {
       method: 'Post',
       headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
@@ -140,7 +140,7 @@ function AboutProduct({ route, navigation }) {
 
     console.log(user)
 
-    await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/Orders/OrderId', {
+    await fetch(API+''+'api/Orders/OrderId', {
       method: 'Post',
     }).then((response) => response.json())
       .then((res) => { console.log(res) })
@@ -148,7 +148,7 @@ function AboutProduct({ route, navigation }) {
       .finally(() => console.log('finished everything to add new order id'))
 
     console.log(Data)
-    await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/Orders/AddOrders', {
+    await fetch(API+''+'api/Orders/AddOrders', {
       method: 'Post',
       headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
@@ -166,7 +166,7 @@ function AboutProduct({ route, navigation }) {
       .finally(() => console.log('finished everything'))
 
       
-  await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/SendCode', {
+  await fetch(API+''+'Api/SendCode', {
     method: 'Post',
     headers: {
       Accept: 'application/json', 'Content-Type': 'application/json',
@@ -195,7 +195,7 @@ function AboutProduct({ route, navigation }) {
 
 
         <View style={styles.Imagecontainer}>
-          <Image style={styles.ProductImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26/' + Data.Product_Image }} />
+          <Image style={styles.ProductImage} source={{ uri:API+''+ Data.Product_Image }} />
         </View>
         <View>
           <Text style={styles.Text} >

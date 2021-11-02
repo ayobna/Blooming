@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { View, ScrollView, Form, Text, StyleSheet, Dimensions, TouchableHighlight, Button, Image, TouchableOpacity, TextInput } from 'react-native';
-
+import { API } from '../../utils/Elements';
 
 export default function NewPassword({ route, navigation }) {
 
@@ -21,7 +21,7 @@ export default function NewPassword({ route, navigation }) {
 
 
     const AddPassword =async()=>{
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Users/NewPassword', {
+        await fetch(API+''+'Api/Users/NewPassword', {
           method: 'Post',
           headers: {
               Accept: 'application/json', 'Content-Type': 'application/json',

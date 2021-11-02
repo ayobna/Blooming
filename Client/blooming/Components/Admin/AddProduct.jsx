@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, Button, TouchableOpacity, TextInput, Image, Dim
 import { Picker } from '@react-native-picker/picker';
 import * as ImagePicker from 'expo-image-picker';
 import { Camera } from 'expo-camera';
+import { API } from "../../utils/Elements";
 export default function AddProduct({ route, navigation }) {
 
 
@@ -102,7 +103,7 @@ export default function AddProduct({ route, navigation }) {
 
     const AddProduct = async () => {
         console.log(Names[selectedValueNames])
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/Products/Insert', {
+        await fetch(API+''+'api/Products/Insert', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',
@@ -134,7 +135,7 @@ export default function AddProduct({ route, navigation }) {
 
 
     const UploadImage = async (fN, B64) => {
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Image', {
+        await fetch(API+''+'Api/Image', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',
@@ -162,7 +163,7 @@ export default function AddProduct({ route, navigation }) {
 
 
     const AddName = async () => {
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Products/AddName', {
+        await fetch(API+''+'Api/Products/AddName', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',
@@ -183,7 +184,7 @@ export default function AddProduct({ route, navigation }) {
             .finally(() => console.log('finished everything'))
     }
     const UpdateNames = async () => {
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/ShowProductDetails', {
+        await fetch(API+''+'api/ShowProductDetails', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',

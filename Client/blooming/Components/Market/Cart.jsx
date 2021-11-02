@@ -80,7 +80,7 @@ function Cart({ route, navigation }) {
 
     console.log(user)
 
-    await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/Orders/OrderId', {
+    await fetch(API+''+'api/Orders/OrderId', {
       method: 'Post',
     }).then((response) => response.json())
       .then((res) => {})
@@ -93,7 +93,7 @@ function Cart({ route, navigation }) {
 
    
 
-    await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/Orders/AddOrders', {
+    await fetch(API+''+'api/Orders/AddOrders', {
       method: 'Post',
       headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ function Cart({ route, navigation }) {
 
 
 
-  await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/SendCode', {
+  await fetch(API+''+'Api/SendCode', {
     method: 'Post',
     headers: {
       Accept: 'application/json', 'Content-Type': 'application/json',
@@ -170,7 +170,7 @@ return (
       (
         <View style={styles.card}>
 
-          <Image style={styles.cardImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26/' + item.Data.Product_Image }} />
+          <Image style={styles.cardImage} source={{ uri: API+'' + item.Data.Product_Image }} />
           <View style={styles.cardHeader}>
 
             <View>

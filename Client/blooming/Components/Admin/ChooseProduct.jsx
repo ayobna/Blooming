@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View ,Image} from "react-native";
-
+import { API } from "../../utils/Elements";
 export default function ChooseProduct({ route, navigation }) {
     // [CodeType, setCodeType] = useState(0)
 
 
     const  GetProdct=async (Code_Type) => {
       
-            await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/Products', {
+            await fetch(API+''+'api/Products', {
                 method: 'Post',
                 headers: {
                     Accept: 'application/json', 'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export default function ChooseProduct({ route, navigation }) {
     return (
 
         <View style={styles.container}>
-                  <Image style={styles.bgImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26//images/home_page/Home07.jpeg' }} />
+                  <Image style={styles.bgImage} source={{ uri: API+''+'images/home_page/Home07.jpeg' }} />
 
             <View style={styles.countContainer}>
 

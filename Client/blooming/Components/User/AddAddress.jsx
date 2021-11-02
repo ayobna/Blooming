@@ -6,7 +6,7 @@ import * as Location from 'expo-location';
 import Geolocation from 'react-native-geolocation-service';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Geocoder from 'react-native-geocoding';
-export default function AddAddress({ navigation ,route}) {
+export default function AddAddress({ navigation, route }) {
 
     const GOOGLE_PLACES_API_KEY = 'AIzaSyDlhGoQo-ZBVomVxCH80m6brsW4UZJTuqk'; // never save your real api key in a snack!
 
@@ -31,28 +31,30 @@ export default function AddAddress({ navigation ,route}) {
 
 
     }, []);
- 
+
 
     useEffect(() => {
 
         ref.current?.setAddressText('');
-        
-        if(route!==undefined&&route.params!=undefined&&route.params.Key!==undefined)
-        {
+
+        if (route !== undefined && route.params != undefined && route.params.Key !== undefined) {
             setGoBackKey(route.params.Key)
         }
         const unsubscribe = navigation.addListener('focus', () => {
             // The screen is focused
             // Call any action
+
             (async () => {
+                console.log("TEST")
                 let { status } = await Location.requestForegroundPermissionsAsync();
                 if (status !== 'granted') {
-                    this.setState({ errorMsg: 'Permission to access location was denied' });
+                    setErrorMsg('Permission to access location was denied');
                     return;
                 }
+                console.log(status)
 
                 let location = await Location.getCurrentPositionAsync({});
-                console.log(location)
+
                 setPin({
                     latitude: location.coords.latitude,
                     longitude: location.coords.longitude
@@ -71,19 +73,22 @@ export default function AddAddress({ navigation ,route}) {
         return unsubscribe;
     }, []);
 
-    const Reversegeocoding   = async () => {
+    const Reversegeocoding = async () => {
         // console.log(login)
         // console.log(JSON.stringify(login))
-        await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + region.latitude + ',' +region.longitude + '&key=' + GOOGLE_PLACES_API_KEY)
+        await fetch('https://maps.googleapis.com/maps/api/geocode/json?address=' + region.latitude + ',' + region.longitude + '&language=iw&region=IL&key=' + GOOGLE_PLACES_API_KEY)
             .then((response) =>
-             response.json()     
-             )
-             
+                response.json()
+            )
+
             .then((responseJson) => {
-            //    console.log('ADDRESS GEOCODE is BACK!! => ' + JSON.stringify(responseJson.results[0].formatted_address));
-           // setAddress(responseJson.results[0].formatted_address)
-            navigation.navigate(GoBackKey, { Address: responseJson.results[0].formatted_address })
-        })
+                //    console.log('ADDRESS GEOCODE is BACK!! => ' + JSON.stringify(responseJson.results[0].formatted_address));
+                // setAddress(responseJson.results[0].formatted_address)
+                let addressArray = responseJson.results[0].formatted_address.split(',')
+                console.log(addressArray)
+                navigation.navigate(GoBackKey, { Address: addressArray, region: region })
+
+            })
     }
 
 
@@ -116,7 +121,7 @@ export default function AddAddress({ navigation ,route}) {
                     // })
                     console.log(data.description)
                     setAddress(data.description)
-                 
+
                 }}
                 query={{
                     key: GOOGLE_PLACES_API_KEY,
@@ -170,7 +175,7 @@ export default function AddAddress({ navigation ,route}) {
                 //  onLongPress={handlerLongClick}
                 //onPress={handlerClick}
                 //Here is the trick
-                onPress={()=>Reversegeocoding()}
+                onPress={() => Reversegeocoding()}
                 //  onPress={() => navigation.navigate('Register2', { Address: Address })}
                 activeOpacity={0.6}
                 style={[styles.buttonStyle, styles.Space]}>

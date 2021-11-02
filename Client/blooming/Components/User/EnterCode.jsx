@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { View, ScrollView, Form, Text, StyleSheet, Dimensions, TouchableHighlight, Button, Image, TouchableOpacity, TextInput } from 'react-native';
-
+import { API } from '../../utils/Elements';
 
 export default function EnterCode({route, navigation}) {
 
@@ -29,7 +29,7 @@ export default function EnterCode({route, navigation}) {
     }, [Code]);
 
     const sendCode = async () => {
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Users/ForgotPass', {
+        await fetch(API+''+'Api/Users/ForgotPass', {
           method: 'Post',
           headers: {
             Accept: 'application/json', 'Content-Type': 'application/json',
@@ -67,7 +67,7 @@ export default function EnterCode({route, navigation}) {
     const sendCodeagin = async (UserToken) => {
         // console.log(login)
         // console.log(JSON.stringify(login))
-        await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/sendpushnotification', {
+        await fetch(API+''+'api/sendpushnotification', {
           method: 'Post',
           headers: {
             Accept: 'application/json', 'Content-Type': 'application/json',

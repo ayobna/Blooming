@@ -11,7 +11,7 @@ import {
   TextInput,
   FlatList,
 } from 'react-native';
-
+import { API } from '../../utils/Elements';
 export default function Prouduct({ route, navigation }) {
 
   const [Data, setData] = useState(route.params.data)
@@ -48,7 +48,7 @@ export default function Prouduct({ route, navigation }) {
                 </View>
               </View>
 
-              <Image style={styles.cardImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26/' + item.Product_Image }} />
+              <Image style={styles.cardImage} source={{ uri:API+''+ item.Product_Image }} />
             </TouchableOpacity>
         
         )
