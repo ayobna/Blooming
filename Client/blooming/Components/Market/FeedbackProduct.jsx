@@ -11,10 +11,7 @@ import {
     TextInput,
     FlatList
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import Stars from 'react-native-stars';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import NumericInput from 'react-native-numeric-input'
+import { API } from '../../utils/Elements';
 
 import { Rating } from "react-native-rating-element";
 function FeedbackProduct({ route, navigation }) {

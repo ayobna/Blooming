@@ -2,9 +2,9 @@
   "expoServerPort": 19000,
   "packagerPort": 19000,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://a4-46e.ayobnas.blooming.exp.direct",
+  "packagerNgrokUrl": "https://packager.a4-46e.ayobnas.blooming.exp.direct",
+  "ngrokPid": 21664,
   "webpackServerPort": null,
   "devToolsPort": 19002
 }

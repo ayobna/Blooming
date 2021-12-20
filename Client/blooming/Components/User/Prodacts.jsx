@@ -9,7 +9,7 @@ import {
     ScrollView,
     FlatList,
 } from 'react-native';
-
+import { API } from '../../utils/Elements';
 export default function Prodacts({ navigation }) {
     const [Data, setData] = useState([
         { id: 1, title: "Product 1", price: "$ 25.00 USD", image: "https://via.placeholder.com/400x200/FFB6C1/000000" },

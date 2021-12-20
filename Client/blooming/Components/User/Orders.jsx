@@ -141,7 +141,7 @@ function Orders({ route, navigation }) {
                     <View>
                         {OrderDate(item, index)}
                         <View style={styles.card}>
-                            <Image style={styles.cardImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26/' + item.Product_Image }} />
+                            <Image style={styles.cardImage} source={{ uri: API+'' + item.Product_Image }} />
 
 
                             <View style={styles.cardHeader}>
@@ -176,7 +176,7 @@ function Orders({ route, navigation }) {
                     <View style={styles.modalView}>
                         <Text style={styles.modalText}>Feedback</Text>
 
-                        <Image style={styles.cardImageModel} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26/' + Dataitem.Product_Image }} />
+                        <Image style={styles.cardImageModel} source={{ uri: API+'' + Dataitem.Product_Image }} />
                         <Text style={styles.price}> {Dataitem.Type_Description}</Text>
                         <Text style={styles.title}>{Dataitem.Name_Description}</Text>
                         <Text style={styles.price}> {Dataitem.Color_Description}</Text>

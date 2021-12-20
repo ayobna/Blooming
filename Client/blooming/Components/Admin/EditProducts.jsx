@@ -15,6 +15,7 @@ import { API } from '../../utils/Elements';
 export default function EditProducts({ route, navigation }) {
 
   const [Data, setData] = useState(route.params.data)
+  console.log(route.params.data)
   const [NewPrice,setPrice ] = useState(0)
 
   const itemSeparator = () => {
@@ -186,7 +187,7 @@ const handlerClick2=async(tybe,names)=>{
               </View>
             </View>
 
-            <Image style={styles.cardImage} source={{ uri: API+''+ + item.Product_Image }} />
+            <Image style={styles.cardImage} source={{ uri: API+''+ item.Product_Image }} />
 
             <View style={styles.cardFooter}>
               <View style={styles.socialBarContainer}>

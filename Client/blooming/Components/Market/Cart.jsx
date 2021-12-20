@@ -12,7 +12,7 @@ import {
 
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { API } from '../../utils/Elements';
 import NumericInput from 'react-native-numeric-input'
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteProduct, addProduct } from '../../store/actions/cart';

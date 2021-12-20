@@ -14,7 +14,7 @@ import {
   TouchableHighlight,
   Pressable
 } from 'react-native';
-import { API } from '../../utils/Elements';
+import {API} from "../../utils/Elements"
 
 function SoldProudct({ route, navigation }) {
 

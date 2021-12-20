@@ -807,7 +807,7 @@ Create PROCEDURE OrderId
 As
 INSERT INTO Orders  VALUES ((SELECT GETDATE()))
 Go
-EXEc OrderId 
+--EXEc OrderId 
 
 Create PROCEDURE AddToOrders
 @Id_Product int ,@Id_User int,@Amount int
@@ -815,7 +815,7 @@ As
 insert INTO  Orders_Details values((SELECT MAX([Id_Order]) FROM Orders),@Id_Product,@Id_User,@Amount)
 Go
 
-Alter PROCEDURE UserOrders
+create PROCEDURE UserOrders
 @Id_User int
 AS
 
@@ -853,7 +853,7 @@ AS
 select*from Feedbacks
 go
 
-exec GetAllFeedback
+--exec GetAllFeedback
 
 ------------------------Question------------------------
 create proc askForProduct
@@ -861,7 +861,7 @@ create proc askForProduct
 AS
 insert INTO  Question values(@Id_Product,@Id_User,@Question_Description)
 GO
-exec askForProduct 13,11,'sdzdfzdf'
+--exec askForProduct 13,11,'sdzdfzdf'
 create proc AnswerForProduct
 @Id_Question  int , @Answer_Description nvarchar(128)
 AS
@@ -918,7 +918,7 @@ go
 
 --exec AdminQuestion 
 
-Alter proc  SoldProduct
+create proc  SoldProduct
 AS
 SELECT Id_Product, SUM(Amount) AS SumAmount
 FROM     site26.Orders_Details

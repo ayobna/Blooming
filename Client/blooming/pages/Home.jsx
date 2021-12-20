@@ -22,7 +22,7 @@ import {
 
 } from 'react-native';
 import * as Notifications from 'expo-notifications';
-
+import { API } from '../utils/Elements';
 const Tab = createBottomTabNavigator();
 
 
@@ -35,7 +35,7 @@ export default function Home({ navigation, route }) {
 
 
     useEffect(() => {
-        console.log("######################################################################################")
+       
      getData()
         //lastLogin
         // _storeData()
@@ -58,7 +58,7 @@ export default function Home({ navigation, route }) {
 
 
     const UpdateUser = (token) => {
-         fetch('http://ruppinmobile.tempdomain.co.il/site26/Api/Users/Edit', {
+         fetch(API+''+'Api/Users/Edit', {
             method: 'Post',
             headers: {
                 Accept: 'application/json', 'Content-Type': 'application/json',

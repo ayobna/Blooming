@@ -11,7 +11,7 @@ import {
 
 import AppLoading from 'expo-app-loading';
 import { useFonts, Allan_400Regular, Allan_700Bold } from '@expo-google-fonts/allan';
-
+import { API } from '../../utils/Elements';
 const ENTRIES1 = [
   {
     title: 'Beautiful and dramatic Antelope Canyon',

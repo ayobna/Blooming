@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import * as Notifications from 'expo-notifications';
 
-
+import {API} from '../utils/Elements'
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -117,7 +117,7 @@ export default function Login({ props, navigation }) {
   const sendLogin = async () => {
     // console.log(login)
     // console.log(JSON.stringify(login))
-    await fetch('http://ruppinmobile.tempdomain.co.il/site26/api/Users/login', {
+    await fetch(API+''+'api/Users/login', {
       method: 'Post',
       headers: {
         Accept: 'application/json', 'Content-Type': 'application/json',
@@ -157,7 +157,7 @@ export default function Login({ props, navigation }) {
   return (
     <View style={styles.container}>
 
-      <Image style={styles.bgImage} source={{ uri: 'http://ruppinmobile.tempdomain.co.il/site26//images/home_page/Home04.jpeg' }} />
+      <Image style={styles.bgImage} source={{ uri: API+''+'images/home_page/Home04.jpeg' }} />
 
 
       <Text style={styles.title}>Blooming</Text>

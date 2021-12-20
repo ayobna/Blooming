@@ -8,7 +8,7 @@ import { addProduct, deleteProduct } from '../../store/actions/cart';
 import Stars from 'react-native-stars';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Rating } from "react-native-rating-element";
-
+import { API } from '../../utils/Elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 //const windowWidth = Dimensions.get('window').width;
 const { width: screenWidth } = Dimensions.get('window');

@@ -6,6 +6,7 @@ import * as Location from 'expo-location';
 import Geolocation from 'react-native-geolocation-service';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Geocoder from 'react-native-geocoding';
+import { API } from '../../utils/Elements';
 export default function AddAddress({ navigation, route }) {
 
     const GOOGLE_PLACES_API_KEY = 'AIzaSyDlhGoQo-ZBVomVxCH80m6brsW4UZJTuqk'; // never save your real api key in a snack!
